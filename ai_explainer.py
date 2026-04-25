@@ -1,11 +1,17 @@
 """This module imports the OpenAI library for use in AI applications."""
 
-from openai import OpenAI
+import os
 
-client = OpenAI()
 
 def explain_finding(finding: dict) -> str:
     """This function retrieves the message from a given finding dictionary."""
+    import os
+    from openai import OpenAI
+
+    if not os.getenv("OPENAI_API_KEY"):
+        return "AI explanation skipped (no API key provided)."
+
+    client = OpenAI()
 
     message = finding.get("message", "")
     symbol = finding.get("symbol", "")

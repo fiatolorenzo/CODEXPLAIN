@@ -1,0 +1,5 @@
+pylint
+bandit
+radon
+openai
+rich

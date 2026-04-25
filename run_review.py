@@ -139,9 +139,12 @@ def main():
 
             print(f"[{color}][{severity}][/] Line {finding['line']} - {finding['symbol']}")
             print(f"[bold]Issue:[/bold] {finding['message']}")
-            print("[bold]Explanation:[/bold]")
-            for line in explanation.split("\n"):
-                print(f"   [dim]{line}[/dim]")
+            if explanation.startswith("AI explanation skipped"):
+                print(f"[dim]{explanation}[/dim]")
+            else:
+                print("[bold]Explanation:[/bold]")
+                for line in explanation.split("\n"):
+                    print(f"   [dim]{line}[/dim]")
             width = shutil.get_terminal_size().columns
             print(f"[blue]{'-' * width}[/blue]")
 
@@ -164,9 +167,12 @@ def main():
 
             print(f"[{color}][{severity}][/] Line {finding['line']} - {finding['symbol']}")
             print(f"[bold]Issue:[/bold] {finding['message']}")
-            print("[bold]Explanation:[/bold]")
-            for line in explanation.split("\n"):
-                print(f"   [dim]{line}[/dim]")
+            if explanation.startswith("AI explanation skipped"):
+                print(f"[dim]{explanation}[/dim]")
+            else:
+                print("[bold]Explanation:[/bold]")
+                for line in explanation.split("\n"):
+                    print(f"   [dim]{line}[/dim]")
             width = shutil.get_terminal_size().columns
             print(f"[blue]{'-' * width}[/blue]")
 
@@ -189,9 +195,12 @@ def main():
 
             print(f"[{color}][{severity}][/] Line {finding['line']} - Complexity Issue")
             print(f"[bold]Issue:[/bold] {finding['message']}")
-            print("[bold]Explanation:[/bold]")
-            for line in explanation.split("\n"):
-                print(f"   [dim]{line}[/dim]")
+            if explanation.startswith("AI explanation skipped"):
+                print(f"[dim]{explanation}[/dim]")
+            else:
+                print("[bold]Explanation:[/bold]")
+                for line in explanation.split("\n"):
+                    print(f"   [dim]{line}[/dim]")
             width = shutil.get_terminal_size().columns
             print(f"[blue]{'-' * width}[/blue]")
 
